@@ -1,0 +1,34 @@
+// code beneden als therapeutNotitie NIET LEEG is
+      if (!empty($rest['datum_therapeut'])){
+        echo "<br>";
+        if (!empty($rest['id_therapeut'])){
+
+          echo 'Notitie therapeut';
+
+          echo '
+          <form action="includes/agenda.php" method="post" id="notitieForm">
+            <input type="text" value="'.$rest['id_therapeut'].'" name="idTherapeutNotitie" hidden>
+            <input type="text" value="'.$rest['datum_therapeut'].'" name="idTherapeutDatum" hidden>
+            <textarea rows="4" cols="50" name="comment" form="notitieForm">'.$rest['notitie_therapeut'].'</textarea>
+            <input type="submit" name="therapeutNotitie" value="Notitie opslaan" >
+          </form>
+          ';
+        }
+      } 
+
+
+
+
+                  /// code beneden als therapeutNotitie WEl LEEG is
+            if (!empty($rest['datumTherapeutNotitieLeeg'])){
+
+              echo 'Notitie therapeut';
+            
+              echo '
+              <form action="includes/agenda.php" method="post" id="notitieForm">
+                <input type="text" value="'.$rest['datumTherapeutNotitieLeeg'].'" name="idTherapeutDatum" hidden>
+                <textarea rows="4" cols="50" name="comment" form="notitieForm"></textarea>
+                <input type="submit" name="therapeutNotitie" value="Notitie opslaan" >
+              </form>
+              ';
+      }
